@@ -1,0 +1,591 @@
+/* Estilos globais */
+body {
+    margin: 0;
+    padding: 0;
+}
+/* ----- Menu Lateral ----- */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 60px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 20px;
+    box-shadow: none;
+}
+.menu-icon:hover {
+    transform: scale(1.2);
+}
+/* ---------- Início ---------- */
+#inicio {
+    background-color: #676127;
+    color: #cfc4b1;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    font-family: 'sree krushnadevaraya';
+}
+#foto {
+    width: 100%;
+    height: 100%;
+}
+/* ---------- Biografia ---------- */
+#biografia {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'sree krushnadevaraya';
+    background-color: #676127;
+    color: #cfc4b1;
+}
+.conteudo-autora {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+.conteudo-texto {
+    width: 55%;
+    text-align: center;
+}
+.conteudo-texto h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.conteudo-texto p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+a {
+    text-decoration: none;
+}
+.conteudo-texto button {
+    padding: 10px 20px;
+    background-color: #d45836;
+    color: #e6e3ca;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.conteudo-texto button:hover {
+    background-color: #eda946;
+    color: #d45836;
+}
+.image-placeholder {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image-placeholder img {
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+/* ---------- Obras ---------- */
+#obras {
+    background-color: #676127;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 4%;
+    font-family: 'Sree Krushnadevaraya';
+    font-size: 20px;
+    position: relative; /* Added to allow positioning of child elements */
+}
+#obras h1 {
+    font-size: 3em;
+    margin-bottom: 5%;
+    margin-top: 2%;
+    font-family: 'Sree Krushnadevaraya';
+    z-index: 1;
+    position: relative;
+}
+.slides {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    z-index: 0;
+}
+.item {
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+    transition: 0.5s;
+    left: calc(50% - 200px);
+    top: 0;
+    word-spacing: normal;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.item img {
+    height: 500px;
+    width: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+#next, #prev {
+    position: absolute;
+    top: 50%;
+    color: #eda946;
+    background-color: transparent;
+    border: none;
+    font-size: xxx-large;
+    font-family: monospace;
+    font-weight: bold;
+    cursor: pointer;
+}
+#next {
+    right: 20px;
+}
+#prev {
+    left: 20px;
+}
+/* ---------- Frases ---------- */
+#frases {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    background-color: #676127;
+    font-family: 'Sree Krushnadevaraya';
+}
+#frases h1 {
+    font-size: 3em;
+    margin-bottom: 3%;
+    margin-top: 4%;
+}
+.cardFrase {
+    display: flex;
+    flex-direction: column;
+    isolation: isolate;
+    position: relative;
+    background: #29292c;
+    border-radius: 1rem;
+    overflow: hidden;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 45%; /* Alinhamento em duas colunas */
+    margin: 1rem;
+    font-size: 16px;
+    --gradient: #676127;
+    --color: #676127;
+}
+.cardFrase:before {
+    position: absolute;
+    content: "";
+    inset: 0.0625rem;
+    border-radius: 0.9375rem;
+    background: #18181b;
+    z-index: 2;
+}
+.cardFrase:after {
+    position: absolute;
+    content: "";
+    width: 0.25rem;
+    inset: 0.65rem auto 0.65rem 0.5rem;
+    border-radius: 0.125rem;
+    background: var(--gradient);
+    transition: transform 300ms ease;
+    z-index: 4;
+}
+.cardFrase:hover:after {
+    transform: translateX(0.15rem);
+}
+.notititle {
+    color: var(--color);
+    padding: 0.65rem 0.25rem 0.4rem 1.25rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: transform 300ms ease;
+    z-index: 5;
+}
+.cardFrase:hover .notititle {
+    transform: translateX(0.15rem);
+}
+.notibody {
+    color: #99999d;
+    padding: 0 1.25rem;
+    transition: transform 300ms ease;
+    z-index: 5;
+}
+.cardFrase:hover .notibody {
+    transform: translateX(0.25rem);
+}
+.notiglow,
+.notiborderglow {
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle closest-side at center, white, transparent);
+    opacity: 0;
+    transition: opacity 300ms ease;
+}
+.cardFrase:hover .notiglow,
+.cardFrase:hover .notiborderglow {
+    opacity: 0.1;
+}
+.line {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.note {
+    color: var(--color);
+    position: fixed;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 0.9rem;
+    width: 75%;
+}
+/* ---------- Prêmios ---------- */
+#premios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    margin: 0;
+    background-color: #676127;
+    font-family: 'Sree Krushnadevaraya';
+    min-height: 40vh;
+}
+#premios h1 {
+font-size: 3em;
+margin-bottom: 3%;
+margin-top: 2%;
+}
+.cards-container {
+display: flex;
+gap: 30px;
+flex-wrap: wrap;
+justify-content: center;
+}
+.cards {
+position: relative;
+height: 150px;
+transition-duration: 0.5s;
+background: none;
+overflow: hidden;
+width: 300px;
+}
+.cards:hover {
+height: 270px;
+}
+.cards:hover .outlinePage {
+box-shadow: 0 10px 15px #b1985e;
+}
+.cards:hover .detailPage {
+display: flex;
+}
+.outlinePage {
+position: relative;
+background: linear-gradient(45deg, #fffbf0, #ffdd87);
+width: 300px;
+height: 150px;
+border-radius: 25px;
+transition-duration: 0.5s;
+z-index: 2;
+}
+.detailPage {
+position: relative;
+display: none;
+width: 300px;
+height: 120px;
+background: white;
+top: -20px;
+z-index: 1;
+transition-duration: 1s;
+border-radius: 0 0 25px 25px;
+overflow: hidden;
+align-items: center;
+justify-content: flex-start;
+}
+.splitLine {
+position: absolute;
+width: 200px;
+height: 10px;
+top: 100px;
+background-image: linear-gradient(
+    to right,
+    transparent 10%,
+    #ffe8a0 20%,
+    #f7b733 50%,
+    #ffe8a0 70%,
+    transparent 90%
+);
+z-index: 1;
+}
+.trophy {
+position: absolute;
+right: 0px;
+top: 4px;
+z-index: 2;
+}
+.ranking_number {
+position: relative;
+color: #ffc64b;
+font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+font-weight: 700;
+font-size: 80px;
+left: 20px;
+padding: 0;
+margin: 0;
+top: -5px;
+}
+.ranking_word {
+position: relative;
+font-size: 40px;
+color: #424c50;
+}
+.userAvatar {
+position: absolute;
+bottom: 6px;
+left: 20px;
+}
+.userName {
+position: relative;
+font-weight: 600;
+color: #6b7578;
+left: 55px;
+font-size: 18px;
+top: -2px;
+}
+.medals {
+position: absolute;
+top: 15px;
+right: 5px;
+}
+.gradesBox {
+position: relative;
+height: 75px;
+top: 10px;
+margin-right: 10px;
+margin-left: 15px;
+}
+.gradesIcon {
+position: absolute;
+top: 10px;
+} 
+.gradesBoxLabel {
+position: relative;
+display: block;
+color: #424c50;
+letter-spacing: 6px;
+font-family: Arial, Helvetica, sans-serif;
+margin-top: 20px;
+font-weight: 800;
+font-size: 13px;
+}
+.gradesBoxNum {
+position: relative;
+font-family: Arial, Helvetica, sans-serif;
+display: block;
+font-size: 25px;
+font-weight: 800;
+margin-left: 60px;
+color: #ea9518;
+top: -5px;
+}
+.timeNum {
+color: #6cabf6;
+}
+.slide-in-top {
+animation: slide-in-top 1s cubic-bezier(0.65, 0.05, 0.36, 1) both;
+} 
+@keyframes slide-in-top {
+0% {
+    transform: translateY(-100px);
+    opacity: 0;
+}
+100% {
+    transform: translateY(0);
+    opacity: 1;
+}
+}
+/* ---------- Contato ---------- */
+#contato {
+    background-color: #676127;
+}
+.card {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+backdrop-filter: blur(15px);
+margin: 0 100px;
+}
+.card ul {
+padding: 1rem;
+display: flex;
+list-style: none;
+gap: 1rem;
+align-items: center;
+justify-content: center;
+flex-wrap: wrap;
+flex-direction: row;
+}
+.card ul li {
+cursor: pointer;
+}
+.svg {
+transition: all 0.3s;
+padding: 1rem;
+height: 60px;
+width: 60px;
+border-radius: 100%;
+color: #000;
+fill: currentColor;
+box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3),
+            inset 0 0 5px rgba(255, 255, 255, 0.5),
+            0 5px 5px rgba(0, 0, 0, 0.164);
+}
+.text {
+opacity: 0;
+padding: 5px;
+transition: all 0.3s;
+color: #676127;
+background-color: rgba(255, 255, 255, 0.3);
+position: absolute;
+z-index: 9999;
+box-shadow: -5px 0 1px rgba(153, 153, 153, 0.2),
+            -10px 0 1px rgba(153, 153, 153, 0.2),
+            inset 0 0 20px rgba(255, 255, 255, 0.3),
+            inset 0 0 5px rgba(255, 255, 255, 0.5),
+            0 5px 5px rgba(0, 0, 0, 0.082);
+}
+.iso-pro {
+transition: 0.5s;
+}
+.iso-pro:hover a > .svg {
+transform: translate(15px, -15px);
+border-radius: 100%;
+}
+.iso-pro:hover .text {
+opacity: 1;
+transform: translate(25px, -2px) skew(-5deg);
+}
+.iso-pro:hover .svg {
+transform: translate(5px, -5px);
+}
+.iso-pro span {
+opacity: 0;
+position: absolute;
+color: #1877f2;
+border-color: #1877f2;
+box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.3),
+            inset 0 0 5px rgba(255, 255, 255, 0.5),
+            0 5px 5px rgba(0, 0, 0, 0.164);
+border-radius: 50%;
+transition: all 0.3s;
+height: 60px;
+width: 60px;
+}
+.iso-pro:hover span {
+opacity: 1;
+}
+.iso-pro:hover span:nth-child(1) {
+opacity: 0.2;
+}
+.iso-pro:hover span:nth-child(2) {
+opacity: 0.4;
+transform: translate(5px, -5px);
+}
+.iso-pro:hover span:nth-child(3) {
+opacity: 0.6;
+transform: translate(10px, -10px);
+}
+/* ---------- Referencias (links) ---------- */
+#referencias {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    background-color: #676127;
+    font-family: 'Sree Krushnadevaraya';
+    min-height: 40vh;
+}
+#referencias h1 {
+    font-size: 3em;
+    margin-bottom: 1%;
+    margin-top: 2%;
+}
+/* ---------- Footer ---------- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #eda946;
+    font-family: 'Sree Krushnadevaraya';
+}
+footer p {
+    margin: 5px;
+}
+/* ---------- Responsividade ---------- */
+@media (max-width: 768px) {
+    .conteudo-perfil {
+        flex-direction: column;
+        text-align: center;
+    }
+    .conteudo-texto, 
+    .image-placeholder {
+        width: 100%;
+    }
+    .side-menu {
+        width: 50px;
+    }
+    .menu-icon {
+        font-size: 25px;
+    }
+    .content {
+        margin-left: 70px;
+    }
+}
+@media (max-width: 480px) {
+    .side-menu {
+        width: 40px;
+    }
+    .menu-icon {
+        font-size: 20px;
+    }
+    .content {
+        margin-left: 60px;
+    }
+}
